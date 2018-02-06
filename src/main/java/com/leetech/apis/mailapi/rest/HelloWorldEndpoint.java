@@ -23,8 +23,8 @@ public class HelloWorldEndpoint {
 	@Produces("text/plain")
 	@Path("/world")
 	public Response doGet() {
-		final String username = "mfuzo123@gmail.com";
-		final String password = "mfuzo830327";
+		final String username = "sikzatech@gmail.com";
+		final String password = "200903375";
 
 		// setting gmail smtp properties
 		Properties props = new Properties();
@@ -44,7 +44,7 @@ public class HelloWorldEndpoint {
 			System.out.println("trying to send");
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("mfuzo123@gmail.com"));
+			message.setFrom(new InternetAddress("sikzatech@gmail.com"));
 
 			// recipients email address
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("masikisiki@gmail.com"));
