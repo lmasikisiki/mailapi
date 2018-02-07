@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -11,95 +18,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="target/demo-swarm.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/activation-1.1.1.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/asm-6.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/asm-commons-6.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/asm-tree-6.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/bean-validation-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/bootstrap-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/cdi-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/cdi-api-1.2.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/cdi-config-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/classmate-1.3.3.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/config-api-1.2.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/config-api-runtime-1.2.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/connector-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/container-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/ee-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/ejb-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/elytron-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/hibernate-validator-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/hibernate-validator-5.3.5.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/io-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-annotations-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-core-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-databind-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-jaxrs-base-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-jaxrs-json-provider-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jackson-module-jaxb-annotations-2.8.9.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jandex-2.0.4.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/javax.el-impl-3.0.1-b08-jbossorg-1.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/javax.mail-1.5.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jaxrs-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jaxrs-cdi-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jaxrs-validator-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-annotations-api_1.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-concurrency-api_1.0_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-connector-api_1.7_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-ejb-api_3.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-ejb3-ext-api-2.2.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-el-api_3.0_spec-1.0.9.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-interceptors-api_1.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-jaxrs-api_2.0_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-logging-3.3.1.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-modules-1.6.1.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-servlet-api_3.1_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jboss-websocket-api_1.1_spec-1.1.1.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/jca-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/logging-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/mail-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/meta-spi-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/naming-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/narayana-jts-idlj-5.5.30.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/openjdk-orb-8.0.4.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/request-controller-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/resteasy-validator-provider-11-3.0.24.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/security-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-api-1.2.6.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-api-base-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-api-javaee-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-api-jboss-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-impl-base-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-impl-javaee-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-impl-jboss-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-descriptors-spi-2.0.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-impl-base-1.2.6.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/shrinkwrap-spi-1.2.6.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/snakeyaml-1.17.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/spi-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/transactions-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/undertow-2018.1.0.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/undertow-core-1.4.18.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/undertow-servlet-1.4.18.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/xnio-api-3.3.8.Final.jar"/>
-	<classpathentry kind="lib" path="target/demo/WEB-INF/lib/xnio-nio-3.3.8.Final.jar"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/kotlin"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
