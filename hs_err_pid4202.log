@@ -1,0 +1,789 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 66584576 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2643), pid=4202, tid=0x00007fb00206d700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_151-b12) (build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12)
+# Java VM: OpenJDK 64-Bit Server VM (25.151-b12 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb01807b800):  VMThread [stack: 0x00007fb001f6d000,0x00007fb00206e000] [id=4212]
+
+Stack: [0x00007fb001f6d000,0x00007fb00206e000],  sp=0x00007fb00206c4c0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa684eb]
+V  [libjvm.so+0x4c579c]
+V  [libjvm.so+0x8b6b50]
+V  [libjvm.so+0x8b0fce]
+V  [libjvm.so+0x92b806]
+V  [libjvm.so+0x92cb33]
+V  [libjvm.so+0x9291fb]
+V  [libjvm.so+0x9294ac]
+V  [libjvm.so+0x8db3c3]
+V  [libjvm.so+0xa6a192]
+V  [libjvm.so+0xa6f277]
+V  [libjvm.so+0xa6ca47]
+V  [libjvm.so+0xa6decf]
+V  [libjvm.so+0xa6e3c1]
+V  [libjvm.so+0x8b4032]
+
+VM_Operation (0x00007fb020b83d30): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007fb01800e800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fb0185f5800 JavaThread "Reference Reaper" daemon [_thread_blocked, id=4221, stack(0x00007fb001140000,0x00007fb001241000)]
+  0x00007fb0180c5000 JavaThread "Service Thread" daemon [_thread_blocked, id=4219, stack(0x00007fb00158e000,0x00007fb00168f000)]
+  0x00007fb0180b5800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=4218, stack(0x00007fb00168f000,0x00007fb001790000)]
+  0x00007fb0180b4000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=4217, stack(0x00007fb001790000,0x00007fb001891000)]
+  0x00007fb0180b1000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4216, stack(0x00007fb001891000,0x00007fb001992000)]
+  0x00007fb0180af000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4215, stack(0x00007fb001992000,0x00007fb001a93000)]
+  0x00007fb018088000 JavaThread "Finalizer" daemon [_thread_blocked, id=4214, stack(0x00007fb001d6b000,0x00007fb001e6c000)]
+  0x00007fb018083800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4213, stack(0x00007fb001e6c000,0x00007fb001f6d000)]
+  0x00007fb01800e800 JavaThread "main" [_thread_blocked, id=4205, stack(0x00007fb020a85000,0x00007fb020b86000)]
+
+Other Threads:
+=>0x00007fb01807b800 VMThread [stack: 0x00007fb001f6d000,0x00007fb00206e000] [id=4212]
+  0x00007fb0180c7800 WatcherThread [stack: 0x00007fb00148d000,0x00007fb00158e000] [id=4220]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fb01800a910] Threads_lock - owner thread: 0x00007fb01807b800
+[0x00007fb01800ae10] Heap_lock - owner thread: 0x00007fb01800e800
+
+Heap:
+ PSYoungGen      total 208896K, used 30699K [0x00000000ec500000, 0x00000000fb700000, 0x0000000100000000)
+  eden space 178176K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f7300000)
+  from space 30720K, 99% used [0x00000000f7300000,0x00000000f90faf20,0x00000000f9100000)
+  to   space 22528K, 0% used [0x00000000f9100000,0x00000000f9100000,0x00000000fa700000)
+ ParOldGen       total 76800K, used 46671K [0x00000000c4e00000, 0x00000000c9900000, 0x00000000ec500000)
+  object space 76800K, 60% used [0x00000000c4e00000,0x00000000c7b93f98,0x00000000c9900000)
+ Metaspace       used 13265K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+
+Card table byte_map: [0x00007fb01cf69000,0x00007fb01d143000] byte_map_base: 0x00007fb01c942000
+
+Marking Bits: (ParMarkBitMap*) 0x00007fb01fd562c0
+ Begin Bits: [0x00007fb002270000, 0x00007fb003138000)
+ End Bits:   [0x00007fb003138000, 0x00007fb004000000)
+
+Polling page: 0x00007fb020ba9000
+
+CodeCache: size=245760Kb used=6988Kb max_used=7006Kb free=238771Kb
+ bounds [0x00007fb009000000, 0x00007fb009720000, 0x00007fb018000000]
+ total_blobs=2219 nmethods=1856 adapters=278
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 17.231 Thread 0x00007fb0180b1000 nmethod 2130 0x00007fb00948bd50 code [0x00007fb00948bf40, 0x00007fb00948c518]
+Event: 17.239 Thread 0x00007fb0180b4000 nmethod 2131 0x00007fb009416ed0 code [0x00007fb009417080, 0x00007fb0094174e8]
+Event: 17.287 Thread 0x00007fb0180b1000 2132   !   4       org.jboss.shrinkwrap.api.SecurityActions::newInstance (218 bytes)
+Event: 17.287 Thread 0x00007fb0180b4000 2133   !   4       org.jboss.shrinkwrap.api.SecurityActions::getConstructor (52 bytes)
+Event: 17.293 Thread 0x00007fb0180b4000 nmethod 2133 0x00007fb0093bc390 code [0x00007fb0093bc520, 0x00007fb0093bc6a8]
+Event: 17.312 Thread 0x00007fb0180b1000 nmethod 2132 0x00007fb009435d50 code [0x00007fb009435fc0, 0x00007fb009436a70]
+Event: 17.763 Thread 0x00007fb0180b4000 2134       4       org.jboss.jandex.Indexer::processInnerClasses (160 bytes)
+Event: 17.775 Thread 0x00007fb0180b5800 2135       3       org.jboss.jandex.AnnotationValue$StringValue::hashCode (20 bytes)
+Event: 17.776 Thread 0x00007fb0180b5800 nmethod 2135 0x00007fb009315910 code [0x00007fb009315aa0, 0x00007fb009315dd8]
+Event: 17.853 Thread 0x00007fb0180b4000 nmethod 2134 0x00007fb00915f690 code [0x00007fb00915f9a0, 0x00007fb009161428]
+
+GC Heap History (10 events):
+Event: 5.840 GC heap after
+Heap after GC invocations=7 (full 0):
+ PSYoungGen      total 66048K, used 6139K [0x00000000ec500000, 0x00000000f5100000, 0x0000000100000000)
+  eden space 59904K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000eff80000)
+  from space 6144K, 99% used [0x00000000eff80000,0x00000000f057ec38,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000f4580000,0x00000000f4580000,0x00000000f5100000)
+ ParOldGen       total 40960K, used 15230K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 37% used [0x00000000c4e00000,0x00000000c5cdfbc8,0x00000000c7600000)
+ Metaspace       used 13215K, capacity 13620K, committed 13696K, reserved 1060864K
+  class space    used 1517K, capacity 1642K, committed 1664K, reserved 1048576K
+}
+Event: 6.449 GC heap before
+{Heap before GC invocations=8 (full 0):
+ PSYoungGen      total 66048K, used 66043K [0x00000000ec500000, 0x00000000f5100000, 0x0000000100000000)
+  eden space 59904K, 100% used [0x00000000ec500000,0x00000000eff80000,0x00000000eff80000)
+  from space 6144K, 99% used [0x00000000eff80000,0x00000000f057ec38,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000f4580000,0x00000000f4580000,0x00000000f5100000)
+ ParOldGen       total 40960K, used 15230K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 37% used [0x00000000c4e00000,0x00000000c5cdfbc8,0x00000000c7600000)
+ Metaspace       used 13231K, capacity 13620K, committed 13696K, reserved 1060864K
+  class space    used 1517K, capacity 1642K, committed 1664K, reserved 1048576K
+Event: 6.526 GC heap after
+Heap after GC invocations=8 (full 0):
+ PSYoungGen      total 128000K, used 11753K [0x00000000ec500000, 0x00000000f5800000, 0x0000000100000000)
+  eden space 116224K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f3680000)
+  from space 11776K, 99% used [0x00000000f4580000,0x00000000f50fa478,0x00000000f5100000)
+  to   space 15360K, 0% used [0x00000000f3680000,0x00000000f3680000,0x00000000f4580000)
+ ParOldGen       total 40960K, used 19166K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 46% used [0x00000000c4e00000,0x00000000c60b7b38,0x00000000c7600000)
+ Metaspace       used 13231K, capacity 13620K, committed 13696K, reserved 1060864K
+  class space    used 1517K, capacity 1642K, committed 1664K, reserved 1048576K
+}
+Event: 8.374 GC heap before
+{Heap before GC invocations=9 (full 0):
+ PSYoungGen      total 128000K, used 127977K [0x00000000ec500000, 0x00000000f5800000, 0x0000000100000000)
+  eden space 116224K, 100% used [0x00000000ec500000,0x00000000f3680000,0x00000000f3680000)
+  from space 11776K, 99% used [0x00000000f4580000,0x00000000f50fa478,0x00000000f5100000)
+  to   space 15360K, 0% used [0x00000000f3680000,0x00000000f3680000,0x00000000f4580000)
+ ParOldGen       total 40960K, used 19166K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 46% used [0x00000000c4e00000,0x00000000c60b7b38,0x00000000c7600000)
+ Metaspace       used 13258K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+Event: 8.579 GC heap after
+Heap after GC invocations=9 (full 0):
+ PSYoungGen      total 131584K, used 15335K [0x00000000ec500000, 0x00000000fa700000, 0x0000000100000000)
+  eden space 116224K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f3680000)
+  from space 15360K, 99% used [0x00000000f3680000,0x00000000f4579e80,0x00000000f4580000)
+  to   space 22528K, 0% used [0x00000000f9100000,0x00000000f9100000,0x00000000fa700000)
+ ParOldGen       total 40960K, used 30517K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 74% used [0x00000000c4e00000,0x00000000c6bcd778,0x00000000c7600000)
+ Metaspace       used 13258K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+}
+Event: 9.954 GC heap before
+{Heap before GC invocations=10 (full 0):
+ PSYoungGen      total 131584K, used 131559K [0x00000000ec500000, 0x00000000fa700000, 0x0000000100000000)
+  eden space 116224K, 100% used [0x00000000ec500000,0x00000000f3680000,0x00000000f3680000)
+  from space 15360K, 99% used [0x00000000f3680000,0x00000000f4579e80,0x00000000f4580000)
+  to   space 22528K, 0% used [0x00000000f9100000,0x00000000f9100000,0x00000000fa700000)
+ ParOldGen       total 40960K, used 30517K [0x00000000c4e00000, 0x00000000c7600000, 0x00000000ec500000)
+  object space 40960K, 74% used [0x00000000c4e00000,0x00000000c6bcd778,0x00000000c7600000)
+ Metaspace       used 13264K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+Event: 10.138 GC heap after
+Heap after GC invocations=10 (full 0):
+ PSYoungGen      total 200704K, used 22508K [0x00000000ec500000, 0x00000000fb700000, 0x0000000100000000)
+  eden space 178176K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f7300000)
+  from space 22528K, 99% used [0x00000000f9100000,0x00000000fa6fb048,0x00000000fa700000)
+  to   space 30720K, 0% used [0x00000000f7300000,0x00000000f7300000,0x00000000f9100000)
+ ParOldGen       total 42496K, used 42489K [0x00000000c4e00000, 0x00000000c7780000, 0x00000000ec500000)
+  object space 42496K, 99% used [0x00000000c4e00000,0x00000000c777e578,0x00000000c7780000)
+ Metaspace       used 13264K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+}
+Event: 10.138 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 200704K, used 22508K [0x00000000ec500000, 0x00000000fb700000, 0x0000000100000000)
+  eden space 178176K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f7300000)
+  from space 22528K, 99% used [0x00000000f9100000,0x00000000fa6fb048,0x00000000fa700000)
+  to   space 30720K, 0% used [0x00000000f7300000,0x00000000f7300000,0x00000000f9100000)
+ ParOldGen       total 42496K, used 42489K [0x00000000c4e00000, 0x00000000c7780000, 0x00000000ec500000)
+  object space 42496K, 99% used [0x00000000c4e00000,0x00000000c777e578,0x00000000c7780000)
+ Metaspace       used 13264K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+Event: 10.851 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 200704K, used 3871K [0x00000000ec500000, 0x00000000fb700000, 0x0000000100000000)
+  eden space 178176K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000f7300000)
+  from space 22528K, 17% used [0x00000000f9100000,0x00000000f94c7ed0,0x00000000fa700000)
+  to   space 30720K, 0% used [0x00000000f7300000,0x00000000f7300000,0x00000000f9100000)
+ ParOldGen       total 76800K, used 42362K [0x00000000c4e00000, 0x00000000c9900000, 0x00000000ec500000)
+  object space 76800K, 55% used [0x00000000c4e00000,0x00000000c775ea00,0x00000000c9900000)
+ Metaspace       used 13264K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+}
+Event: 21.508 GC heap before
+{Heap before GC invocations=12 (full 1):
+ PSYoungGen      total 200704K, used 182047K [0x00000000ec500000, 0x00000000fb700000, 0x0000000100000000)
+  eden space 178176K, 100% used [0x00000000ec500000,0x00000000f7300000,0x00000000f7300000)
+  from space 22528K, 17% used [0x00000000f9100000,0x00000000f94c7ed0,0x00000000fa700000)
+  to   space 30720K, 0% used [0x00000000f7300000,0x00000000f7300000,0x00000000f9100000)
+ ParOldGen       total 76800K, used 42362K [0x00000000c4e00000, 0x00000000c9900000, 0x00000000ec500000)
+  object space 76800K, 55% used [0x00000000c4e00000,0x00000000c775ea00,0x00000000c9900000)
+ Metaspace       used 13265K, capacity 13644K, committed 13696K, reserved 1060864K
+  class space    used 1520K, capacity 1646K, committed 1664K, reserved 1048576K
+
+Deoptimization events (10 events):
+Event: 8.916 Thread 0x00007fb01800e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fb0091483e0 method=org.jboss.jandex.ParameterizedType.hashCode()I @ 37
+Event: 9.096 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb0092b52e8 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 20
+Event: 9.097 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb0092b52e8 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 20
+Event: 9.097 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb0092b52e8 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 20
+Event: 9.097 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb0092b52e8 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 20
+Event: 9.333 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb009423d08 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 27
+Event: 9.334 Thread 0x00007fb01800e800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007fb009423d08 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 27
+Event: 9.383 Thread 0x00007fb01800e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fb0096526c0 method=org.jboss.jandex.GenericSignatureParser.parseClassTypeSignature()Lorg/jboss/jandex/Type; @ 45
+Event: 12.623 Thread 0x00007fb01800e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fb00919c1e4 method=java.util.TimSort.countRunAndMakeAscending([Ljava/lang/Object;IILjava/util/Comparator;)I @ 27
+Event: 12.898 Thread 0x00007fb01800e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fb00944cdf0 method=java.util.TimSort.countRunAndMakeAscending([Ljava/lang/Object;IILjava/util/Comparator;)I @ 27
+
+Internal exceptions (10 events):
+Event: 4.514 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed570700) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.514 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed5714d8) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.514 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed571c20) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.514 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed5723a0) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.517 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed58d320) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.517 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed58df40) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.518 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed597160) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.518 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed597d98) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.520 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed5a2190) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 4.520 Thread 0x00007fb01800e800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ed5a2e10) thrown at [/build/openjdk-8-W2Qe27/openjdk-8-8u151-b12/src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+
+Events (10 events):
+Event: 11.663 Thread 0x00007fb0180b5800 flushing nmethod 0x00007fb00953c210
+Event: 12.623 Thread 0x00007fb01800e800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00007fb00919c1e4
+Event: 12.623 Thread 0x00007fb01800e800 DEOPT PACKING pc=0x00007fb00919c1e4 sp=0x00007fb020b83e10
+Event: 12.623 Thread 0x00007fb01800e800 DEOPT UNPACKING pc=0x00007fb009004f69 sp=0x00007fb020b83c58 mode 2
+Event: 12.898 Thread 0x00007fb01800e800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00007fb00944cdf0
+Event: 12.898 Thread 0x00007fb01800e800 DEOPT PACKING pc=0x00007fb00944cdf0 sp=0x00007fb020b83d30
+Event: 12.898 Thread 0x00007fb01800e800 DEOPT UNPACKING pc=0x00007fb009004f69 sp=0x00007fb020b83c78 mode 2
+Event: 12.910 loading class java/util/IdentityHashMap$1
+Event: 12.939 loading class java/util/IdentityHashMap$1 done
+Event: 21.225 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:05 4327910                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 08:05 4327910                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 08:05 4327910                            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+015b5000-015d6000 rw-p 00000000 00:00 0                                  [heap]
+c4e00000-c9900000 rw-p 00000000 00:00 0 
+c9900000-ec500000 ---p 00000000 00:00 0 
+ec500000-fb700000 rw-p 00000000 00:00 0 
+ff680000-100000000 ---p 00000000 00:00 0 
+100000000-1001a0000 rw-p 00000000 00:00 0 
+1001a0000-140000000 ---p 00000000 00:00 0 
+7fafbc000000-7fafbe4e4000 rw-p 00000000 00:00 0 
+7fafbe4e4000-7fafc0000000 ---p 00000000 00:00 0 
+7fafc4000000-7fafc7ffc000 rw-p 00000000 00:00 0 
+7fafc7ffc000-7fafc8000000 ---p 00000000 00:00 0 
+7fafc8000000-7fafcbfff000 rw-p 00000000 00:00 0 
+7fafcbfff000-7fafcc000000 ---p 00000000 00:00 0 
+7fafcc000000-7fafcc021000 rw-p 00000000 00:00 0 
+7fafcc021000-7fafd0000000 ---p 00000000 00:00 0 
+7fafd0000000-7fafd0021000 rw-p 00000000 00:00 0 
+7fafd0021000-7fafd4000000 ---p 00000000 00:00 0 
+7fafd4000000-7fafd47bb000 rw-p 00000000 00:00 0 
+7fafd47bb000-7fafd8000000 ---p 00000000 00:00 0 
+7fafd8000000-7fafd8021000 rw-p 00000000 00:00 0 
+7fafd8021000-7fafdc000000 ---p 00000000 00:00 0 
+7fafdc000000-7fafde171000 rw-p 00000000 00:00 0 
+7fafde171000-7fafe0000000 ---p 00000000 00:00 0 
+7fafe0000000-7fafe1e0c000 rw-p 00000000 00:00 0 
+7fafe1e0c000-7fafe4000000 ---p 00000000 00:00 0 
+7fafe4000000-7fafe4021000 rw-p 00000000 00:00 0 
+7fafe4021000-7fafe8000000 ---p 00000000 00:00 0 
+7fafe8000000-7fafe8021000 rw-p 00000000 00:00 0 
+7fafe8021000-7fafec000000 ---p 00000000 00:00 0 
+7fafec000000-7fafec023000 rw-p 00000000 00:00 0 
+7fafec023000-7faff0000000 ---p 00000000 00:00 0 
+7faff0000000-7faff0021000 rw-p 00000000 00:00 0 
+7faff0021000-7faff4000000 ---p 00000000 00:00 0 
+7faff4000000-7faff4021000 rw-p 00000000 00:00 0 
+7faff4021000-7faff8000000 ---p 00000000 00:00 0 
+7faff8000000-7faff8021000 rw-p 00000000 00:00 0 
+7faff8021000-7faffc000000 ---p 00000000 00:00 0 
+7faffc000000-7faffc021000 rw-p 00000000 00:00 0 
+7faffc021000-7fb000000000 ---p 00000000 00:00 0 
+7fb000039000-7fb0001f9000 rw-p 00000000 00:00 0 
+7fb0001f9000-7fb000239000 ---p 00000000 00:00 0 
+7fb000239000-7fb000242000 r-xp 00000000 08:05 4327855                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7fb000242000-7fb000441000 ---p 00009000 08:05 4327855                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7fb000441000-7fb000442000 r--p 00008000 08:05 4327855                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7fb000442000-7fb000443000 rw-p 00009000 08:05 4327855                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7fb000696000-7fb00069e000 r--s 0004c000 08:06 10886626                   /home/lizo/.m2/repository/org/jboss/logmanager/jboss-logmanager/2.0.7.Final/jboss-logmanager-2.0.7.Final.jar
+7fb00069e000-7fb0006a3000 r--s 00035000 08:06 10362800                   /home/lizo/.m2/repository/org/jboss/msc/jboss-msc/1.2.7.SP1/jboss-msc-1.2.7.SP1.jar
+7fb0006ea000-7fb0006ed000 r--s 00020000 08:06 12588392                   /home/lizo/.m2/repository/org/wildfly/common/wildfly-common/1.2.0.Final/wildfly-common-1.2.0.Final.jar
+7fb0006ed000-7fb0006f7000 r--s 00070000 08:06 11012872                   /home/lizo/.m2/repository/org/jboss/logmanager/log4j-jboss-logmanager/1.1.4.Final/log4j-jboss-logmanager-1.1.4.Final.jar
+7fb0006f7000-7fb0006fd000 r--s 00039000 08:06 14033885                   /home/lizo/.m2/repository/org/wildfly/wildfly-naming/11.0.0.Final/wildfly-naming-11.0.0.Final.jar
+7fb0006fd000-7fb000701000 r--s 0001b000 08:06 14429137                   /home/lizo/.m2/repository/org/jboss/threads/jboss-threads/2.2.1.Final/jboss-threads-2.2.1.Final.jar
+7fb000701000-7fb000703000 r--s 0000a000 08:06 13374666                   /home/lizo/.m2/repository/org/wildfly/client/wildfly-client-config/1.0.0.Final/wildfly-client-config-1.0.0.Final.jar
+7fb000703000-7fb000723000 r--s 001c8000 08:06 11012920                   /home/lizo/.m2/repository/org/wildfly/security/wildfly-elytron/1.1.6.Final/wildfly-elytron-1.1.6.Final.jar
+7fb000723000-7fb000725000 r--s 00003000 08:06 12457192                   /home/lizo/.m2/repository/org/jboss/stdio/jboss-stdio/1.0.2.GA/jboss-stdio-1.0.2.GA.jar
+7fb000725000-7fb000728000 r--s 0000c000 08:06 1182376                    /home/lizo/.m2/repository/org/wildfly/core/wildfly-deployment-repository/3.0.8.Final/wildfly-deployment-repository-3.0.8.Final.jar
+7fb000728000-7fb00072b000 r--s 0000d000 08:06 14166003                   /home/lizo/.m2/repository/org/jboss/common/jboss-common-beans/2.0.0.Final/jboss-common-beans-2.0.0.Final.jar
+7fb00072b000-7fb00073c000 r--s 00148000 08:06 10880210                   /home/lizo/.m2/repository/org/wildfly/core/wildfly-server/3.0.8.Final/wildfly-server-3.0.8.Final.jar
+7fb00073c000-7fb000740000 r--s 00020000 08:06 10880201                   /home/lizo/.m2/repository/org/jboss/jboss-vfs/3.2.12.Final/jboss-vfs-3.2.12.Final.jar
+7fb000740000-7fb000742000 r--s 00008000 08:06 10096799                   /home/lizo/.m2/repository/ch/qos/cal10n/cal10n-api/0.8.1/cal10n-api-0.8.1.jar
+7fb000742000-7fb000744000 r--s 00004000 08:06 10880223                   /home/lizo/.m2/repository/org/jboss/logmanager/commons-logging-jboss-logmanager/1.0.2.Final/commons-logging-jboss-logmanager-1.0.2.Final.jar
+7fb000744000-7fb000749000 r--s 0009a000 08:05 4327896                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7fb000749000-7fb000757000 r--s 000b1000 08:06 9440463                    /home/lizo/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+7fb000757000-7fb000770000 r--s 001a1000 08:06 14296458                   /home/lizo/.m2/repository/xerces/xercesImpl/2.11.0.SP5/xercesImpl-2.11.0.SP5.jar
+7fb000770000-7fb000970000 rw-p 00000000 00:00 0 
+7fb000970000-7fb000c71000 rw-p 00000000 00:00 0 
+7fb000c71000-7fb000c88000 r-xp 00000000 08:05 4327871                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7fb000c88000-7fb000e87000 ---p 00017000 08:05 4327871                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7fb000e87000-7fb000e88000 r--p 00016000 08:05 4327871                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7fb000e88000-7fb000e89000 rw-p 00017000 08:05 4327871                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7fb000e89000-7fb000e9a000 r-xp 00000000 08:05 4327888                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7fb000e9a000-7fb00109a000 ---p 00011000 08:05 4327888                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7fb00109a000-7fb00109b000 r--p 00011000 08:05 4327888                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7fb00109b000-7fb00109c000 rw-p 00012000 08:05 4327888                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7fb00109c000-7fb00109d000 r--s 00002000 08:06 10752749                   /home/lizo/.m2/repository/org/wildfly/core/wildfly-version/3.0.8.Final/wildfly-version-3.0.8.Final.jar
+7fb00109d000-7fb00109e000 r--s 00000000 08:06 11010839                   /home/lizo/.m2/repository/org/jboss/logging/jul-to-slf4j-stub/1.0.1.Final/jul-to-slf4j-stub-1.0.1.Final.jar
+7fb00109e000-7fb00109f000 r--s 00006000 08:06 11012990                   /home/lizo/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar
+7fb00109f000-7fb0010a3000 r--s 00035000 08:06 11409873                   /home/lizo/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+7fb0010a3000-7fb0010a4000 r--s 00001000 08:06 12850639                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-jackson-provider/3.0.24.Final/resteasy-jackson-provider-3.0.24.Final.jar
+7fb0010a4000-7fb0010a6000 r--s 00003000 08:06 12850635                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-jackson2-provider/3.0.24.Final/resteasy-jackson2-provider-3.0.24.Final.jar
+7fb0010a6000-7fb0010a9000 r--s 00012000 08:06 11279318                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/3.0.24.Final/resteasy-jaxb-provider-3.0.24.Final.jar
+7fb0010a9000-7fb0010ad000 r--s 00024000 08:06 9311714                    /home/lizo/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar
+7fb0010ad000-7fb0010b3000 r--s 00078000 08:06 10886669                   /home/lizo/.m2/repository/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar
+7fb0010b3000-7fb0010d8000 r--s 002fa000 08:06 8262030                    /home/lizo/.m2/repository/xalan/xalan/2.7.1.jbossorg-4/xalan-2.7.1.jbossorg-4.jar
+7fb0010d8000-7fb0010dc000 r--s 00043000 08:06 8262026                    /home/lizo/.m2/repository/xalan/serializer/2.7.1.jbossorg-4/serializer-2.7.1.jbossorg-4.jar
+7fb0010dc000-7fb0010de000 r--s 0000b000 08:06 11150182                   /home/lizo/.m2/repository/org/jboss/weld/se/weld-se-core/2.4.3.Final/weld-se-core-2.4.3.Final.jar
+7fb0010de000-7fb0010fe000 r--s 00177000 08:06 11410328                   /home/lizo/.m2/repository/org/jboss/weld/weld-core-impl/2.4.3.Final/weld-core-impl-2.4.3.Final.jar
+7fb0010fe000-7fb001103000 r--s 00011000 08:06 11010971                   /home/lizo/.m2/repository/org/jboss/weld/weld-spi/2.4.SP1/weld-spi-2.4.SP1.jar
+7fb001103000-7fb001105000 r--s 00004000 08:06 11011731                   /home/lizo/.m2/repository/org/jboss/weld/weld-api/2.4.SP1/weld-api-2.4.SP1.jar
+7fb001105000-7fb001108000 r--s 00012000 08:06 13255040                   /home/lizo/.m2/repository/org/jboss/weld/environment/weld-environment-common/2.4.3.Final/weld-environment-common-2.4.3.Final.jar
+7fb001108000-7fb00110b000 r--s 0002b000 08:06 12327021                   /home/lizo/.m2/repository/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar
+7fb00110b000-7fb001112000 r--s 00063000 08:06 13111871                   /home/lizo/.m2/repository/org/wildfly/core/wildfly-logging/3.0.8.Final/wildfly-logging-3.0.8.Final.jar
+7fb001112000-7fb001114000 r--s 00008000 08:06 14821946                   /home/lizo/.m2/repository/org/jboss/staxmapper/1.3.0.Final/staxmapper-1.3.0.Final.jar
+7fb001114000-7fb001116000 r--s 00021000 08:06 11665965                   /home/lizo/.m2/repository/org/jboss/jboss-dmr/1.4.1.Final/jboss-dmr-1.4.1.Final.jar
+7fb001116000-7fb00111c000 r--s 0002f000 08:06 10879127                   /home/lizo/.m2/repository/org/wildfly/core/wildfly-controller-client/3.0.8.Final/wildfly-controller-client-3.0.8.Final.jar
+7fb00111c000-7fb001140000 r--s 001be000 08:06 12588407                   /home/lizo/.m2/repository/org/wildfly/core/wildfly-controller/3.0.8.Final/wildfly-controller-3.0.8.Final.jar
+7fb001140000-7fb001143000 ---p 00000000 00:00 0 
+7fb001143000-7fb001241000 rw-p 00000000 00:00 0 
+7fb001241000-7fb001254000 r--s 00346000 08:05 4327895                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+7fb001254000-7fb001255000 r--s 00000000 08:06 10493952                   /home/lizo/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+7fb001255000-7fb00129b000 r--s 00376000 08:06 9964783                    /home/lizo/.m2/repository/org/jboss/openjdk-orb/openjdk-orb/8.0.4.Final/openjdk-orb-8.0.4.Final.jar
+7fb00129b000-7fb0012ba000 r--s 00182000 08:06 9704409                    /home/lizo/.m2/repository/org/jboss/narayana/jts/narayana-jts-idlj/5.5.30.Final/narayana-jts-idlj-5.5.30.Final.jar
+7fb0012ba000-7fb0012bb000 r--s 00006000 08:06 12192291                   /home/lizo/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.1.Final/jboss-transaction-api_1.2_spec-1.0.1.Final.jar
+7fb0012bb000-7fb0012c2000 r--s 0000c000 08:06 9311699                    /home/lizo/.m2/repository/org/wildfly/swarm/transactions/2018.1.0/transactions-2018.1.0.jar
+7fb0012c2000-7fb0012c6000 r--s 0000c000 08:06 9833934                    /home/lizo/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+7fb0012c6000-7fb0012cc000 r--s 00007000 08:06 10362795                   /home/lizo/.m2/repository/org/wildfly/swarm/bean-validation/2018.1.0/bean-validation-2018.1.0.jar
+7fb0012cc000-7fb0012ce000 r--s 00002000 08:06 10494551                   /home/lizo/.m2/repository/org/wildfly/swarm/cdi-config/2018.1.0/cdi-config-2018.1.0.jar
+7fb0012ce000-7fb0012cf000 r--s 00002000 08:06 10362804                   /home/lizo/.m2/repository/org/wildfly/swarm/cdi/2018.1.0/cdi-2018.1.0.jar
+7fb0012cf000-7fb0012d1000 r--s 0000e000 08:06 12192277                   /home/lizo/.m2/repository/com/fasterxml/classmate/1.3.3/classmate-1.3.3.jar
+7fb0012d1000-7fb0012d3000 r--s 00009000 08:06 10881410                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-validator-provider-11/3.0.24.Final/resteasy-validator-provider-11-3.0.24.Final.jar
+7fb0012d3000-7fb0012e4000 r--s 000a1000 08:06 10096151                   /home/lizo/.m2/repository/org/hibernate/hibernate-validator/5.3.5.Final/hibernate-validator-5.3.5.Final.jar
+7fb0012e4000-7fb0012e6000 r--s 00000000 08:06 9181281                    /home/lizo/.m2/repository/org/wildfly/swarm/hibernate-validator/2018.1.0/hibernate-validator-2018.1.0.jar
+7fb0012e6000-7fb0012e8000 r--s 00000000 08:06 9181279                    /home/lizo/.m2/repository/org/wildfly/swarm/jaxrs-validator/2018.1.0/jaxrs-validator-2018.1.0.jar
+7fb0012e8000-7fb0012ea000 r--s 00000000 08:06 9047814                    /home/lizo/.m2/repository/org/wildfly/swarm/jaxrs-client-api/2018.1.0/jaxrs-client-api-2018.1.0.jar
+7fb0012ea000-7fb0012eb000 r--s 00000000 08:06 9047790                    /home/lizo/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+7fb0012eb000-7fb0012ef000 r--s 0002f000 08:06 12717730                   /home/lizo/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar
+7fb0012ef000-7fb0012f6000 r--s 0003a000 08:06 13255064                   /home/lizo/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar
+7fb0012f6000-7fb0012f8000 r--s 0000e000 08:06 13896379                   /home/lizo/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+7fb0012f8000-7fb0012ff000 r--s 00049000 08:06 10624792                   /home/lizo/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar
+7fb0012ff000-7fb00130c000 r--s 000a7000 08:06 12849124                   /home/lizo/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar
+7fb00130c000-7fb00131d000 r--s 000ce000 08:06 10752743                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-jaxrs/3.0.24.Final/resteasy-jaxrs-3.0.24.Final.jar
+7fb00131d000-7fb001322000 r--s 00026000 08:06 12588388                   /home/lizo/.m2/repository/org/jboss/resteasy/resteasy-client/3.0.24.Final/resteasy-client-3.0.24.Final.jar
+7fb001322000-7fb001326000 r--s 0000e000 08:06 14556878                   /home/lizo/.m2/repository/javax/enterprise/cdi-api/1.2/cdi-api-1.2.jar
+7fb001326000-7fb001328000 r--s 00007000 08:06 9964780                    /home/lizo/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.9/jackson-module-jaxb-annotations-2.8.9.jar
+7fb001328000-7fb001329000 r--s 00007000 08:06 10624740                   /home/lizo/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.8.9/jackson-jaxrs-base-2.8.9.jar
+7fb001329000-7fb00132a000 r--s 00003000 08:06 10624738                   /home/lizo/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.8.9/jackson-jaxrs-json-provider-2.8.9.jar
+7fb00132a000-7fb00133c000 r--s 0011e000 08:06 9834335                    /home/lizo/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.9/jackson-databind-2.8.9.jar
+7fb00133c000-7fb00133f000 r--s 0000b000 08:06 9704411                    /home/lizo/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.9/jackson-annotations-2.8.9.jar
+7fb00133f000-7fb001343000 r--s 00042000 08:06 9572931                    /home/lizo/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.9/jackson-core-2.8.9.jar
+7fb001343000-7fb001347000 r--s 00019000 08:06 12192863                   /home/lizo/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.0_spec/1.0.0.Final/jboss-jaxrs-api_2.0_spec-1.0.0.Final.jar
+7fb001347000-7fb00134a000 r--s 00002000 08:06 9572929                    /home/lizo/.m2/repository/org/wildfly/swarm/jaxrs-cdi/2018.1.0/jaxrs-cdi-2018.1.0.jar
+7fb00134a000-7fb00134c000 r--s 0001b000 08:06 10362801                   /home/lizo/.m2/repository/org/jboss/xnio/xnio-nio/3.3.8.Final/xnio-nio-3.3.8.Final.jar
+7fb00134c000-7fb001355000 r--s 00076000 08:06 10228008                   /home/lizo/.m2/repository/org/jboss/xnio/xnio-api/3.3.8.Final/xnio-api-3.3.8.Final.jar
+7fb001355000-7fb00137c000 r--s 001e5000 08:06 8132285                    /home/lizo/.m2/repository/io/undertow/undertow-core/1.4.18.Final/undertow-core-1.4.18.Final.jar
+7fb00137c000-7fb001386000 r--s 00074000 08:06 8132283                    /home/lizo/.m2/repository/io/undertow/undertow-servlet/1.4.18.Final/undertow-servlet-1.4.18.Final.jar
+7fb001386000-7fb001388000 r--s 00009000 08:06 12192861                   /home/lizo/.m2/repository/org/jboss/spec/javax/websocket/jboss-websocket-api_1.1_spec/1.1.1.Final/jboss-websocket-api_1.1_spec-1.1.1.Final.jar
+7fb001388000-7fb00138c000 r--s 0002b000 08:06 12192859                   /home/lizo/.m2/repository/org/jboss/spec/javax/servlet/jboss-servlet-api_3.1_spec/1.0.0.Final/jboss-servlet-api_3.1_spec-1.0.0.Final.jar
+7fb00138c000-7fb00138e000 r--s 0000a000 08:06 12850615                   /home/lizo/.m2/repository/org/ow2/asm/asm-tree/6.0/asm-tree-6.0.jar
+7fb00138e000-7fb00138f000 r--s 00012000 08:06 12718095                   /home/lizo/.m2/repository/org/ow2/asm/asm-commons/6.0/asm-commons-6.0.jar
+7fb00138f000-7fb001391000 r--s 00001000 08:06 9572927                    /home/lizo/.m2/repository/org/wildfly/swarm/request-controller/2018.1.0/request-controller-2018.1.0.jar
+7fb001391000-7fb001393000 r--s 00001000 08:06 9442212                    /home/lizo/.m2/repository/org/wildfly/swarm/io/2018.1.0/io-2018.1.0.jar
+7fb001393000-7fb001396000 r--s 00010000 08:06 9442210                    /home/lizo/.m2/repository/org/wildfly/swarm/undertow/2018.1.0/undertow-2018.1.0.jar
+7fb001396000-7fb00139a000 r--s 00007000 08:06 9442214                    /home/lizo/.m2/repository/org/wildfly/swarm/jaxrs/2018.1.0/jaxrs-2018.1.0.jar
+7fb00139a000-7fb00139d000 r--s 0002b000 08:06 10494549                   /home/lizo/.m2/repository/org/jboss/jandex/2.0.4.Final/jandex-2.0.4.Final.jar
+7fb00139d000-7fb0013a5000 r--s 0005c000 08:06 10096782                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-jboss/2.0.0/shrinkwrap-descriptors-impl-jboss-2.0.0.jar
+7fb0013a5000-7fb0013ad000 r--s 00021000 08:06 9964778                    /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-jboss/2.0.0/shrinkwrap-descriptors-api-jboss-2.0.0.jar
+7fb0013ad000-7fb0013af000 r--s 00000000 08:06 9964776                    /home/lizo/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar
+7fb0013af000-7fb0013b4000 r--s 0002b000 08:06 9964774                    /home/lizo/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar
+7fb0013b4000-7fb0013b8000 r--s 0000d000 08:06 9834333                    /home/lizo/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar
+7fb0013b8000-7fb0013bb000 r--s 0000b000 08:06 9047778                    /home/lizo/.m2/repository/org/wildfly/swarm/spi/2018.1.0/spi-2018.1.0.jar
+7fb0013bb000-7fb0013bd000 r--s 00003000 08:06 9047812                    /home/lizo/.m2/repository/org/wildfly/swarm/cdi-jaxrsapi/2018.1.0/cdi-jaxrsapi-2018.1.0.jar
+7fb0013bd000-7fb0013be000 r--s 00001000 08:06 10228004                   /home/lizo/.m2/repository/org/jboss/ejb3/jboss-ejb3-ext-api/2.2.0.Final/jboss-ejb3-ext-api-2.2.0.Final.jar
+7fb0013be000-7fb0013c1000 r--s 0000a000 08:06 12062742                   /home/lizo/.m2/repository/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/1.0.0.Final/jboss-ejb-api_3.2_spec-1.0.0.Final.jar
+7fb0013c1000-7fb0013c2000 r--s 00004000 08:06 12062739                   /home/lizo/.m2/repository/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.jar
+7fb0013c2000-7fb0013c4000 r--s 00009000 08:06 9311695                    /home/lizo/.m2/repository/org/wildfly/swarm/elytron/2018.1.0/elytron-2018.1.0.jar
+7fb0013c4000-7fb0013c5000 r--s 00002000 08:06 9311693                    /home/lizo/.m2/repository/org/wildfly/swarm/security/2018.1.0/security-2018.1.0.jar
+7fb0013c5000-7fb0013c8000 r--s 0000f000 08:06 12062737                   /home/lizo/.m2/repository/org/jboss/spec/javax/resource/jboss-connector-api_1.7_spec/1.0.0.Final/jboss-connector-api_1.7_spec-1.0.0.Final.jar
+7fb0013c8000-7fb0013d5000 r--s 00019000 08:06 9311691                    /home/lizo/.m2/repository/org/wildfly/swarm/connector/2018.1.0/connector-2018.1.0.jar
+7fb0013d5000-7fb0013d7000 r--s 00001000 08:06 9311689                    /home/lizo/.m2/repository/org/wildfly/swarm/jca/2018.1.0/jca-2018.1.0.jar
+7fb0013d7000-7fb0013db000 r--s 00027000 08:06 9181230                    /home/lizo/.m2/repository/org/glassfish/javax.el-impl/3.0.1-b08-jbossorg-1/javax.el-impl-3.0.1-b08-jbossorg-1.jar
+7fb0013db000-7fb0013dd000 r--s 00013000 08:06 11933194                   /home/lizo/.m2/repository/org/jboss/spec/javax/el/jboss-el-api_3.0_spec/1.0.9.Final/jboss-el-api_3.0_spec-1.0.9.Final.jar
+7fb0013dd000-7fb0013de000 r--s 00003000 08:06 11933191                   /home/lizo/.m2/repository/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.2_spec/1.0.0.Final/jboss-interceptors-api_1.2_spec-1.0.0.Final.jar
+7fb0013de000-7fb0013df000 r--s 00004000 08:06 11933189                   /home/lizo/.m2/repository/org/jboss/spec/javax/enterprise/concurrent/jboss-concurrency-api_1.0_spec/1.0.0.Final/jboss-concurrency-api_1.0_spec-1.0.0.Final.jar
+7fb0013df000-7fb0013e3000 r--s 00006000 08:06 9181225                    /home/lizo/.m2/repository/org/wildfly/swarm/ee/2018.1.0/ee-2018.1.0.jar
+7fb0013e3000-7fb0013e4000 r--s 00003000 08:06 9047774                    /home/lizo/.m2/repository/org/wildfly/swarm/ejb/2018.1.0/ejb-2018.1.0.jar
+7fb0013e4000-7fb0013e6000 r--s 00008000 08:06 10096781                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0.jar
+7fb0013e6000-7fb0013e8000 r--s 00011000 08:06 10096778                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-base/2.0.0/shrinkwrap-descriptors-impl-base-2.0.0.jar
+7fb0013e8000-7fb0013ea000 r--s 00003000 08:06 10096786                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0.jar
+7fb0013ea000-7fb001413000 r--s 000cb000 08:06 10096784                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-javaee/2.0.0/shrinkwrap-descriptors-api-javaee-2.0.0.jar
+7fb001413000-7fb00142f000 r--s 0018b000 08:06 10096776                   /home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-javaee/2.0.0/shrinkwrap-descriptors-impl-javaee-2.0.0.jar
+7fb00142f000-7fb001431000 r--s 0000f000 08:06 9834353                    /home/lizo/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar
+7fb001431000-7fb001433000 r--s 00001000 08:06 9181228                    /home/lizo/.m2/repository/org/wildfly/swarm/naming/2018.1.0/naming-2018.1.0.jar
+7fb001433000-7fb001435000 r--s 00004000 08:06 9181223                    /home/lizo/.m2/repository/org/wildfly/swarm/logging/2018.1.0/logging-2018.1.0.jar
+7fb001435000-7fb001438000 r--s 0000e000 08:06 10362232                   /home/lizo/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar
+7fb001438000-7fb00143a000 r--s 00016000 08:06 10752731                   /home/lizo/.m2/repository/org/ow2/asm/asm/6.0/asm-6.0.jar
+7fb00143a000-7fb001467000 r--s 001a0000 08:06 9181219                    /home/lizo/.m2/repository/org/wildfly/swarm/config-api/1.2.0/config-api-1.2.0.jar
+7fb001467000-7fb00146d000 r--s 0003d000 08:06 9963725                    /home/lizo/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar
+7fb00146d000-7fb001473000 r--s 0005d000 08:06 9704407                    /home/lizo/.m2/repository/org/jboss/modules/jboss-modules/1.6.1.Final/jboss-modules-1.6.1.Final.jar
+7fb001473000-7fb001481000 r--s 000af000 08:06 9047775                    /home/lizo/.m2/repository/org/wildfly/swarm/bootstrap/2018.1.0/bootstrap-2018.1.0.jar
+7fb001481000-7fb00148d000 r--s 0004d000 08:06 9047776                    /home/lizo/.m2/repository/org/wildfly/swarm/container/2018.1.0/container-2018.1.0.jar
+7fb00148d000-7fb00148e000 ---p 00000000 00:00 0 
+7fb00148e000-7fb00158e000 rw-p 00000000 00:00 0 
+7fb00158e000-7fb001591000 ---p 00000000 00:00 0 
+7fb001591000-7fb00168f000 rw-p 00000000 00:00 0 
+7fb00168f000-7fb001692000 ---p 00000000 00:00 0 
+7fb001692000-7fb001790000 rw-p 00000000 00:00 0 
+7fb001790000-7fb001793000 ---p 00000000 00:00 0 
+7fb001793000-7fb001891000 rw-p 00000000 00:00 0 
+7fb001891000-7fb001894000 ---p 00000000 00:00 0 
+7fb001894000-7fb001992000 rw-p 00000000 00:00 0 
+7fb001992000-7fb001995000 ---p 00000000 00:00 0 
+7fb001995000-7fb001a93000 rw-p 00000000 00:00 0 
+7fb001a93000-7fb001d6b000 r--p 00000000 08:05 4194838                    /usr/lib/locale/locale-archive
+7fb001d6b000-7fb001d6e000 ---p 00000000 00:00 0 
+7fb001d6e000-7fb001e6c000 rw-p 00000000 00:00 0 
+7fb001e6c000-7fb001e6f000 ---p 00000000 00:00 0 
+7fb001e6f000-7fb001f6d000 rw-p 00000000 00:00 0 
+7fb001f6d000-7fb001f6e000 ---p 00000000 00:00 0 
+7fb001f6e000-7fb004000000 rw-p 00000000 00:00 0 
+7fb004000000-7fb004021000 rw-p 00000000 00:00 0 
+7fb004021000-7fb008000000 ---p 00000000 00:00 0 
+7fb008000000-7fb008001000 r--s 00002000 08:06 9311697                    /home/lizo/.m2/repository/org/wildfly/swarm/meta-spi/2018.1.0/meta-spi-2018.1.0.jar
+7fb008001000-7fb008003000 r--s 0000b000 08:06 9181221                    /home/lizo/.m2/repository/org/wildfly/swarm/config-api-runtime/1.2.0/config-api-runtime-1.2.0.jar
+7fb008003000-7fb00800b000 r--s 00078000 08:06 9572925                    /home/lizo/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar
+7fb00800b000-7fb008015000 r--s 00116000 08:05 4327840                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7fb008015000-7fb008030000 r--s 001d6000 08:05 4327837                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7fb008030000-7fb00804b000 r--s 00394000 08:05 4327835                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7fb00804b000-7fb008dbb000 rw-p 00000000 00:00 0 
+7fb008dbb000-7fb008f8a000 r--s 03c21000 08:05 4327831                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7fb008f8a000-7fb009000000 rw-p 00000000 00:00 0 
+7fb009000000-7fb009720000 rwxp 00000000 00:00 0 
+7fb009720000-7fb018000000 ---p 00000000 00:00 0 
+7fb018000000-7fb01bfff000 rw-p 00000000 00:00 0 
+7fb01bfff000-7fb01c000000 ---p 00000000 00:00 0 
+7fb01c000000-7fb01c004000 r--s 00007000 08:06 9047810                    /home/lizo/.m2/repository/org/wildfly/swarm/mail/2018.1.0/mail-2018.1.0.jar
+7fb01c004000-7fb01c007000 r--s 0000f000 08:05 4327834                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7fb01c007000-7fb01c00d000 r--s 0003a000 08:05 4327838                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7fb01c00d000-7fb01c00e000 r--s 0000a000 08:05 4327842                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7fb01c00e000-7fb01ca29000 rw-p 00000000 00:00 0 
+7fb01ca29000-7fb01ca2a000 ---p 00000000 00:00 0 
+7fb01ca2a000-7fb01cb2a000 rw-p 00000000 00:00 0 
+7fb01cb2a000-7fb01cb2b000 ---p 00000000 00:00 0 
+7fb01cb2b000-7fb01cc2b000 rw-p 00000000 00:00 0 
+7fb01cc2b000-7fb01cc2c000 ---p 00000000 00:00 0 
+7fb01cc2c000-7fb01cd2c000 rw-p 00000000 00:00 0 
+7fb01cd2c000-7fb01cd2d000 ---p 00000000 00:00 0 
+7fb01cd2d000-7fb01ce53000 rw-p 00000000 00:00 0 
+7fb01ce53000-7fb01cf69000 ---p 00000000 00:00 0 
+7fb01cf69000-7fb01cf8f000 rw-p 00000000 00:00 0 
+7fb01cf8f000-7fb01d0a4000 ---p 00000000 00:00 0 
+7fb01d0a4000-7fb01d11e000 rw-p 00000000 00:00 0 
+7fb01d11e000-7fb01d142000 ---p 00000000 00:00 0 
+7fb01d142000-7fb01d160000 rw-p 00000000 00:00 0 
+7fb01d160000-7fb01d503000 ---p 00000000 00:00 0 
+7fb01d503000-7fb01d50b000 r-xp 00000000 08:05 4327879                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb01d50b000-7fb01d70a000 ---p 00008000 08:05 4327879                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb01d70a000-7fb01d70b000 r--p 00007000 08:05 4327879                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb01d70b000-7fb01d70c000 rw-p 00008000 08:05 4327879                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7fb01d70c000-7fb01d717000 r-xp 00000000 08:05 2636931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb01d717000-7fb01d916000 ---p 0000b000 08:05 2636931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb01d916000-7fb01d917000 r--p 0000a000 08:05 2636931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb01d917000-7fb01d918000 rw-p 0000b000 08:05 2636931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7fb01d918000-7fb01d91e000 rw-p 00000000 00:00 0 
+7fb01d91e000-7fb01d929000 r-xp 00000000 08:05 2636934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb01d929000-7fb01db28000 ---p 0000b000 08:05 2636934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb01db28000-7fb01db29000 r--p 0000a000 08:05 2636934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb01db29000-7fb01db2a000 rw-p 0000b000 08:05 2636934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7fb01db2a000-7fb01db40000 r-xp 00000000 08:05 2636915                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb01db40000-7fb01dd3f000 ---p 00016000 08:05 2636915                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb01dd3f000-7fb01dd40000 r--p 00015000 08:05 2636915                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb01dd40000-7fb01dd41000 rw-p 00016000 08:05 2636915                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7fb01dd41000-7fb01dd43000 rw-p 00000000 00:00 0 
+7fb01dd43000-7fb01dd4b000 r-xp 00000000 08:05 2636940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb01dd4b000-7fb01df4a000 ---p 00008000 08:05 2636940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb01df4a000-7fb01df4b000 r--p 00007000 08:05 2636940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb01df4b000-7fb01df4c000 rw-p 00008000 08:05 2636940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7fb01df4c000-7fb01df79000 r-xp 00000000 08:05 4327860                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb01df79000-7fb01e178000 ---p 0002d000 08:05 4327860                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb01e178000-7fb01e179000 r--p 0002c000 08:05 4327860                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb01e179000-7fb01e17b000 rw-p 0002d000 08:05 4327860                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7fb01e17b000-7fb01e18a000 r-xp 00000000 08:05 4327877                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb01e18a000-7fb01e389000 ---p 0000f000 08:05 4327877                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb01e389000-7fb01e38b000 r--p 0000e000 08:05 4327877                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb01e38b000-7fb01e38c000 rw-p 00010000 08:05 4327877                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7fb01e38c000-7fb01e393000 r-xp 00000000 08:05 2636936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7fb01e393000-7fb01e592000 ---p 00007000 08:05 2636936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7fb01e592000-7fb01e593000 r--p 00006000 08:05 2636936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7fb01e593000-7fb01e594000 rw-p 00007000 08:05 2636936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7fb01e594000-7fb01e5aa000 r-xp 00000000 08:05 2626056                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb01e5aa000-7fb01e7a9000 ---p 00016000 08:05 2626056                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb01e7a9000-7fb01e7aa000 rw-p 00015000 08:05 2626056                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fb01e7aa000-7fb01e8b2000 r-xp 00000000 08:05 2636945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7fb01e8b2000-7fb01eab1000 ---p 00108000 08:05 2636945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7fb01eab1000-7fb01eab2000 r--p 00107000 08:05 2636945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7fb01eab2000-7fb01eab3000 rw-p 00108000 08:05 2636945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7fb01eab3000-7fb01ec25000 r-xp 00000000 08:05 4210100                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb01ec25000-7fb01ee25000 ---p 00172000 08:05 4210100                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb01ee25000-7fb01ee2f000 r--p 00172000 08:05 4210100                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb01ee2f000-7fb01ee31000 rw-p 0017c000 08:05 4210100                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7fb01ee31000-7fb01ee35000 rw-p 00000000 00:00 0 
+7fb01ee35000-7fb01fa87000 r-xp 00000000 08:05 4327870                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb01fa87000-7fb01fc87000 ---p 00c52000 08:05 4327870                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb01fc87000-7fb01fd1a000 r--p 00c52000 08:05 4327870                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb01fd1a000-7fb01fd43000 rw-p 00ce5000 08:05 4327870                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7fb01fd43000-7fb01fd73000 rw-p 00000000 00:00 0 
+7fb01fd73000-7fb01fd8b000 r-xp 00000000 08:05 2636933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb01fd8b000-7fb01ff8a000 ---p 00018000 08:05 2636933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb01ff8a000-7fb01ff8b000 r--p 00017000 08:05 2636933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb01ff8b000-7fb01ff8c000 rw-p 00018000 08:05 2636933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7fb01ff8c000-7fb01ff90000 rw-p 00000000 00:00 0 
+7fb01ff90000-7fb01ff93000 r-xp 00000000 08:05 2636939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb01ff93000-7fb020192000 ---p 00003000 08:05 2636939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb020192000-7fb020193000 r--p 00002000 08:05 2636939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb020193000-7fb020194000 rw-p 00003000 08:05 2636939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7fb020194000-7fb0201ad000 r-xp 00000000 08:05 2626089                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb0201ad000-7fb0203ac000 ---p 00019000 08:05 2626089                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb0203ac000-7fb0203ad000 r--p 00018000 08:05 2626089                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb0203ad000-7fb0203ae000 rw-p 00019000 08:05 2626089                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fb0203ae000-7fb02056e000 r-xp 00000000 08:05 2636950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7fb02056e000-7fb02076e000 ---p 001c0000 08:05 2636950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7fb02076e000-7fb020772000 r--p 001c0000 08:05 2636950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7fb020772000-7fb020774000 rw-p 001c4000 08:05 2636950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7fb020774000-7fb020778000 rw-p 00000000 00:00 0 
+7fb020778000-7fb020785000 r-xp 00000000 08:05 4327874                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb020785000-7fb020985000 ---p 0000d000 08:05 4327874                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb020985000-7fb020986000 r--p 0000d000 08:05 4327874                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb020986000-7fb020987000 rw-p 0000e000 08:05 4327874                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7fb020987000-7fb0209ad000 r-xp 00000000 08:05 2636928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7fb0209ad000-7fb0209af000 r--s 00008000 08:05 4327839                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7fb0209af000-7fb0209b0000 r--s 00010000 08:05 4327836                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7fb0209b0000-7fb0209b4000 r--s 00037000 08:05 4327841                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7fb0209b4000-7fb020a85000 rw-p 00000000 00:00 0 
+7fb020a85000-7fb020a88000 ---p 00000000 00:00 0 
+7fb020a88000-7fb020b8b000 rw-p 00000000 00:00 0 
+7fb020b8b000-7fb020b8d000 r--s 00001000 08:05 4327843                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7fb020b8d000-7fb020ba0000 rw-p 00000000 00:00 0 
+7fb020ba0000-7fb020ba8000 rw-s 00000000 08:05 4981750                    /tmp/hsperfdata_lizo/4202
+7fb020ba8000-7fb020ba9000 rw-p 00000000 00:00 0 
+7fb020ba9000-7fb020baa000 ---p 00000000 00:00 0 
+7fb020baa000-7fb020bac000 rw-p 00000000 00:00 0 
+7fb020bac000-7fb020bad000 r--p 00025000 08:05 2636928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7fb020bad000-7fb020bae000 rw-p 00026000 08:05 2636928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7fb020bae000-7fb020baf000 rw-p 00000000 00:00 0 
+7fff470be000-7fff470e2000 rw-p 00000000 00:00 0                          [stack]
+7fff471bb000-7fff471be000 r--p 00000000 00:00 0                          [vvar]
+7fff471be000-7fff471c0000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dmaven.home=/usr/share/maven -Dswarm.app.name=demo.war -Dremote.maven.repo=https://repo.maven.apache.org/maven2 -Dmaven.multiModuleProjectDirectory=/home/lizo/dev/mailapi -Dswarm.cp.info=/home/lizo/dev/mailapi/target/swarm-7644070794184654832-cp.txt 
+java_command: org.wildfly.swarm.bootstrap.MainInvoker org.wildfly.swarm.Swarm
+java_class_path (initial): /home/lizo/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/mail/2018.1.0/mail-2018.1.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/container/2018.1.0/container-2018.1.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/bootstrap/2018.1.0/bootstrap-2018.1.0.jar:/home/lizo/.m2/repository/org/jboss/modules/jboss-modules/1.6.1.Final/jboss-modules-1.6.1.Final.jar:/home/lizo/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/home/lizo/.m2/repository/org/wildfly/swarm/config-api/1.2.0/config-api-1.2.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/config-api-runtime/1.2.0/config-api-runtime-1.2.0.jar:/home/lizo/.m2/repository/org/ow2/asm/asm/6.0/asm-6.0.jar:/home/lizo/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar:/home/lizo/.m2/repository/org/wildfly/swarm/logging/2018.1.0/logging-2018.1.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/naming/2018.1.0/naming-2018.1.0.jar:/home/lizo/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar:/home/lizo/.m2/repository/org/wildfly/swarm/meta-spi/2018.1.0/meta-spi-2018.1.0.jar:/home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-javaee/2.0.0/shrinkwrap-descriptors-impl-javaee-2.0.0.jar:/home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-javaee/2.0.0/shrinkwrap-descriptors-api-javaee-2.0.0.jar:/home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0.jar:/home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-base/2.0.0/shrinkwrap-descriptors-impl-base-2.0.0.jar:/home/lizo/.m2/repository/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0.jar:/home/lizo/.m2/repository/org/wildfly/swarm/ejb/2018.1.0/ejb-2018.1.0.jar:/home/lizo/.m2/repository/org/wildfly/swa
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+PATH=/home/lizo/bin:/home/lizo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa69040], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa69040], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8b2170], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8b2170], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8b2170], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8b2170], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8b2020], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8b24f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8b24f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8b24f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8b24f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04 LTS"
+
+uname:Linux 4.4.0-109-generic #132-Ubuntu SMP Tue Jan 9 19:52:39 UTC 2018 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 14964, NOFILE 65536, AS infinity
+load average:6.80 2.55 1.59
+
+/proc/meminfo:
+MemTotal:        3870128 kB
+MemFree:          135160 kB
+MemAvailable:      38788 kB
+Buffers:             880 kB
+Cached:           353520 kB
+SwapCached:            0 kB
+Active:          3212960 kB
+Inactive:         338796 kB
+Active(anon):    3206932 kB
+Inactive(anon):   324968 kB
+Active(file):       6028 kB
+Inactive(file):    13828 kB
+Unevictable:          64 kB
+Mlocked:              64 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:              1488 kB
+Writeback:            12 kB
+AnonPages:       3197732 kB
+Mapped:            81720 kB
+Shmem:            334232 kB
+Slab:              76096 kB
+SReclaimable:      35804 kB
+SUnreclaim:        40292 kB
+KernelStack:       12208 kB
+PageTables:        49328 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1935064 kB
+Committed_AS:    8504076 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1224704 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      167936 kB
+DirectMap2M:     3848192 kB
+
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 76 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, aes, clmul, erms, 3dnowpref, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 76
+model name	: Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz
+stepping	: 4
+microcode	: 0x404
+cpu MHz		: 480.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes rdrand lahf_lm 3dnowprefetch epb kaiser tpr_shadow vnmi flexpriority ept vpid tsc_adjust smep erms dtherm ida arat
+bugs		:
+bogomips	: 3199.71
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 76
+model name	: Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz
+stepping	: 4
+microcode	: 0x404
+cpu MHz		: 480.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes rdrand lahf_lm 3dnowprefetch epb kaiser tpr_shadow vnmi flexpriority ept vpid tsc_adjust smep erms dtherm ida arat
+bugs		:
+bogomips	: 3199.71
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 76
+model name	: Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz
+stepping	: 4
+microcode	: 0x404
+cpu MHz		: 1309.062
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes rdrand lahf_lm 3dnowprefetch epb kaiser tpr_shadow vnmi flexpriority ept vpid tsc_adjust smep erms dtherm ida arat
+bugs		:
+bogomips	: 3199.71
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 76
+model name	: Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz
+stepping	: 4
+microcode	: 0x404
+cpu MHz		: 1520.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes rdrand lahf_lm 3dnowprefetch epb kaiser tpr_shadow vnmi flexpriority ept vpid tsc_adjust smep erms dtherm ida arat
+bugs		:
+bogomips	: 3199.71
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3870128k(135036k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.151-b12) for linux-amd64 JRE (1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12), built on Oct 27 2017 21:59:02 by "buildd" with gcc 5.4.0 20160609
+
+time: Mon Feb  5 18:08:01 2018
+elapsed time: 40 seconds (0d 0h 0m 40s)
+
