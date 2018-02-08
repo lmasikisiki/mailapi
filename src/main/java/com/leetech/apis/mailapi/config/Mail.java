@@ -12,12 +12,14 @@ import org.axonframework.commandhandling.model.AggregateIdentifier;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.leetech.apis.mailapi.mail.MailSentEvent;
 import com.leetech.apis.mailapi.mail.SendMailCommand;
 
 @Aggregate
 @Entity
+//@Transactional
 public class Mail {
 
 	@AggregateIdentifier
